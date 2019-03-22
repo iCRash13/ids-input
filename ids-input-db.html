@@ -1,0 +1,38 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="ids-input-db">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <!-- Bindeo de dos direcciones a elementos nativos del DOM-->
+    <input value="{{value::input}}">
+  </template>
+
+  <script>
+    /**
+     * `ids-input-db`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class IdsInputDb extends Polymer.Element {
+      static get is() { return 'ids-input-db'; }
+      static get properties() {
+        return {
+          value: {
+            type: String,
+            // Crea automaticamente custom events para que el padre lo escuche y establesca el valor a su propiedad
+            notify: true
+          }
+        };
+      }
+    }
+
+    window.customElements.define(IdsInputDb.is, IdsInputDb);
+  </script>
+</dom-module>
